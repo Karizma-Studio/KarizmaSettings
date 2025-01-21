@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Title>Karizma Settings Domain</Title>
+        <Authors>Karizma Studio</Authors>
+        <Description>Domain Layer of Karizma Settings System</Description>
+        <RepositoryUrl>https://github.com/Karizma-Studio/KarizmaSettings</RepositoryUrl>
+        <PackageTags>EFCore, Server, Clean Architecture, User Managment</PackageTags>
+        <RootNamespace>KarizmaPlatform.Settings.Domain</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="KarizmaCore" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\KarizmaSettings.SharedClasses\KarizmaSettings.SharedClasses.csproj" />
+    </ItemGroup>
+
+</Project>

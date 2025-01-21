@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.Application", "KarizmaSettings.Application\KarizmaSettings.Application.csproj", "{93208BDD-EC82-4333-98D7-2BC55BD9411E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.Domain", "KarizmaSettings.Domain\KarizmaSettings.Domain.csproj", "{7A6F8B6F-D1A2-436E-90D7-250436850804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.Infrastructure", "KarizmaSettings.Infrastructure\KarizmaSettings.Infrastructure.csproj", "{912A3ABE-F664-4A37-9DE7-C62C90F2F438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.SharedClasses", "KarizmaSettings.SharedClasses\KarizmaSettings.SharedClasses.csproj", "{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93208BDD-EC82-4333-98D7-2BC55BD9411E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93208BDD-EC82-4333-98D7-2BC55BD9411E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93208BDD-EC82-4333-98D7-2BC55BD9411E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93208BDD-EC82-4333-98D7-2BC55BD9411E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6F8B6F-D1A2-436E-90D7-250436850804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6F8B6F-D1A2-436E-90D7-250436850804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6F8B6F-D1A2-436E-90D7-250436850804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6F8B6F-D1A2-436E-90D7-250436850804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

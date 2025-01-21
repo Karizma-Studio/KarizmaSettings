@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateGlobalUsings>false</GenerateGlobalUsings>
+        <Nullable>enable</Nullable>
+        <Title>Karizma Settings SharedClasses</Title>
+        <Authors>Karizma Studio</Authors>
+        <Description>SharedClasses Layer of Karizma Settings System</Description>
+        <RepositoryUrl>https://github.com/Karizma-Studio/KarizmaSettings</RepositoryUrl>
+        <PackageTags>EFCore, Server, Clean Architecture, User Managment</PackageTags>
+        <RootNamespace>KarizmaPlatform.Settings.SharedClasses</RootNamespace>
+    </PropertyGroup>
+
+</Project>
