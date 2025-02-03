@@ -29,7 +29,7 @@ public class SettingsHostedService(
     {
         using var scope = scopeFactory.CreateScope();
         var database = scope.ServiceProvider.GetRequiredService<ISettingsDatabase>();
-        var settings = await database.GetSettings().ToListAsync();
+        var settings = await database.GetSettings().Where(s => s.DeletedDate == null).ToListAsync();
         settingsCache.Populate(settings);
     }
 }
