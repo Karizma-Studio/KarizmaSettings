@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.Domain", "K
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.Infrastructure", "KarizmaSettings.Infrastructure\KarizmaSettings.Infrastructure.csproj", "{912A3ABE-F664-4A37-9DE7-C62C90F2F438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaSettings.SharedClasses", "KarizmaSettings.SharedClasses\KarizmaSettings.SharedClasses.csproj", "{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +24,5 @@ Global
 		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{912A3ABE-F664-4A37-9DE7-C62C90F2F438}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B6FBB99-DAB2-410C-A6A3-C5C66F66E753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
