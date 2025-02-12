@@ -45,7 +45,8 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
 
     public Task<UserSetting?> FindNotDeletedById(long identifier)
     {
-        return settingsDatabase.GetUserSettings().SingleOrDefaultAsync((x => x.DeletedDate == new DateTimeOffset?() && x.Id == identifier));
+        return settingsDatabase.GetUserSettings()
+            .SingleOrDefaultAsync((x => x.DeletedDate == new DateTimeOffset?() && x.Id == identifier));
     }
 
     public Task<List<UserSetting>> GetAll()
@@ -67,5 +68,38 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
                                         us.Type == type &&
                                         us.Key == key &&
                                         us.DeletedDate == null);
+    }
+
+    public Task<T?> GetUserSettingValue<T>(long userId, string type, string key, T? defaultValue = default)
+    {
+        return settingsDatabase.GetUserSettings().AsNoTracking()
+            .Where(us => us.UserId == userId &&
+                         us.Type == type &&
+                         us.Key == key &&
+                         us.DeletedDate == null)
+            .Select(us => (T?)Convert.ChangeType(us.Value, typeof(T)))
+            .DefaultIfEmpty(defaultValue)
+            .SingleOrDefaultAsync();
+    }
+    
+    public async Task SetUserSetting<T>(long userId, string type, string key, T value)
+    {
+        
+        var userSetting = await GetUserSetting(userId, type, key);
+        if (userSetting is null)
+        {
+            await Add(new UserSetting
+            {
+                UserId = userId,
+                Type = type,
+                Key = key,
+                Value = value.ToString()
+            });
+        }
+        else
+        {
+            userSetting.Value = value.ToString();
+            await Update(userSetting);
+        }
     }
 }
