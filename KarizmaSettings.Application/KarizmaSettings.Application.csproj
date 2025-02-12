@@ -11,7 +11,7 @@
         <Description>Application Layer of Karizma Settings System</Description>
         <PackageTags>EFCore, Server, Clean Architecture, User Managment</PackageTags>
         <RepositoryUrl>https://github.com/Karizma-Studio/KarizmaSettings</RepositoryUrl>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
     </PropertyGroup>
 
     <ItemGroup>

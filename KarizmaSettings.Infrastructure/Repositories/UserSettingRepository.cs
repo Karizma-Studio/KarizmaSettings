@@ -70,17 +70,24 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
                                         us.DeletedDate == null);
     }
 
-    public Task<T?> GetUserSettingValue<T>(long userId, string type, string key, T? defaultValue = default)
+    public async Task<T?> GetUserSettingValue<T>(long userId, string type, string key, T? defaultValue = default)
     {
-        return settingsDatabase.GetUserSettings().AsNoTracking()
+        var settingValue = await settingsDatabase.GetUserSettings().AsNoTracking()
             .Where(us => us.UserId == userId &&
                          us.Type == type &&
                          us.Key == key &&
                          us.DeletedDate == null)
-            .Select(us => (T?)Convert.ChangeType(us.Value, typeof(T)))
-            .DefaultIfEmpty(defaultValue)
+            .Select(us => us.Value)
             .SingleOrDefaultAsync();
+
+        if (settingValue == null)
+        {
+            return defaultValue;
+        }
+
+        return (T?)Convert.ChangeType(settingValue, typeof(T));
     }
+
     
     public async Task SetUserSetting<T>(long userId, string type, string key, T value)
     {
