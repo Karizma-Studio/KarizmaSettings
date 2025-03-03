@@ -15,7 +15,8 @@ public static class BuilderExtensions
             .AddScoped<IUserSettingRepository, UserSettingRepository>()
             .AddScoped<ISettingsDatabase>(provider => provider.GetRequiredService<TDatabase>())
             .AddSingleton<SettingsCache>()
-            .AddHostedService<SettingsHostedService>();
+            .AddSingleton<SettingsHostedService>()
+            .AddHostedService(provider => provider.GetRequiredService<SettingsHostedService>());
 
         return services;
     }
