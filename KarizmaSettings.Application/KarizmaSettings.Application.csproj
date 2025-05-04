@@ -11,11 +11,11 @@
         <Description>Application Layer of Karizma Settings System</Description>
         <PackageTags>EFCore, Server, Clean Architecture, User Managment</PackageTags>
         <RepositoryUrl>https://github.com/Karizma-Studio/KarizmaSettings</RepositoryUrl>
-        <Version>1.0.5</Version>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\KarizmaSettings.Infrastructure\KarizmaSettings.Infrastructure.csproj" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
 
 </Project>

@@ -1,25 +1,13 @@
 ﻿using KarizmaPlatform.Settings.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace KarizmaPlatform.Settings.Application.Services;
 
-public class SettingsHostedService(
+public class SettingsService(
     IServiceScopeFactory scopeFactory,
-    SettingsCache settingsCache) : IHostedService
+    SettingsCache settingsCache)
 {
-    public async Task StartAsync(CancellationToken cancellationToken)
-    {
-        await FillSettingsCache();
-    }
-
-    public Task StopAsync(CancellationToken cancellationToken)
-    {
-        Console.WriteLine("Settings Cache Stopping ...");
-        return Task.CompletedTask;
-    }
-
     public async Task ReloadCache()
     {
         await FillSettingsCache();
