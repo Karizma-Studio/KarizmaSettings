@@ -27,6 +27,9 @@ public class SettingsCache(ILogger<SettingsCache> logger)
         {
             if (settingsDictionary.TryGetValue(GetTypeKey(type, key), out var value))
             {
+                if (typeof(T) == typeof(TimeSpan))
+                    return (T)(object)TimeSpan.Parse(value);
+
                 return (T)Convert.ChangeType(value, typeof(T));
             }
             else
