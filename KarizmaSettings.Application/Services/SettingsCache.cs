@@ -1,4 +1,5 @@
-﻿using KarizmaPlatform.Settings.Domain.Models;
+﻿using System.Text.Json;
+using KarizmaPlatform.Settings.Domain.Models;
 using Microsoft.Extensions.Logging;
 
 namespace KarizmaPlatform.Settings.Application.Services;
@@ -30,6 +31,12 @@ public class SettingsCache(ILogger<SettingsCache> logger)
                 if (typeof(T) == typeof(TimeSpan))
                     return (T)(object)TimeSpan.Parse(value);
 
+                if (typeof(T).IsArray || (typeof(T).IsClass && typeof(T) != typeof(string)))
+                {
+                    var deserialized = JsonSerializer.Deserialize<T>(value);
+                    return deserialized ?? defaultValue;
+                }
+
                 return (T)Convert.ChangeType(value, typeof(T));
             }
             else
@@ -39,7 +46,7 @@ public class SettingsCache(ILogger<SettingsCache> logger)
         }
         catch (Exception e)
         {
-            logger.LogError(e, $"Unable to convert value to type {typeof(T)}.");
+            logger.LogError(e, $"Error Unable to convert value to type {typeof(T)}.");
             return defaultValue;
         }
     }
