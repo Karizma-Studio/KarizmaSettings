@@ -10,7 +10,7 @@
         <RepositoryUrl>https://github.com/Karizma-Studio/KarizmaSettings</RepositoryUrl>
         <PackageTags>EFCore, Server, Clean Architecture, User Managment</PackageTags>
         <RootNamespace>KarizmaPlatform.Settings.Domain</RootNamespace>
-        <Version>1.0.7</Version>
+        <Version>1.0.8</Version>
     </PropertyGroup>
 
     <ItemGroup>
