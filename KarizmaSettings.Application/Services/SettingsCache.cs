@@ -31,6 +31,9 @@ public class SettingsCache(ILogger<SettingsCache> logger)
                 if (typeof(T) == typeof(TimeSpan))
                     return (T)(object)TimeSpan.Parse(value);
 
+                if (typeof(T) == typeof(DateTimeOffset))
+                    return (T)(object)DateTimeOffset.Parse(value);
+                
                 if (typeof(T).IsArray || (typeof(T).IsClass && typeof(T) != typeof(string)))
                 {
                     var deserialized = JsonSerializer.Deserialize<T>(value);
