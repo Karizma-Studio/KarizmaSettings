@@ -27,8 +27,8 @@ public class SettingRepository(ISettingsDatabase settingsDatabase) : ISettingRep
         settingsDatabase.GetSettings().Remove(byId);
         await settingsDatabase.SaveChangesAsync();
     }
-
-    public async Task SoftDeleteById(long identifier)
+    
+    public async Task SoftDelete(long identifier)
     {
         var byId = await FindById(identifier);
         if (byId is null)
@@ -51,6 +51,11 @@ public class SettingRepository(ISettingsDatabase settingsDatabase) : ISettingRep
     public Task<List<Setting>> GetAll()
     {
         return settingsDatabase.GetSettings().ToListAsync();
+    }
+
+    public Task<List<Setting>> GetAllNotDeleted()
+    {
+        throw new NotImplementedException();
     }
 
     public Task<List<Setting>> GetAllNotDeleted(bool asNoTracking = false)

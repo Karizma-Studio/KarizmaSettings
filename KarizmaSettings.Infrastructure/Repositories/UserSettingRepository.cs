@@ -28,7 +28,7 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
         await settingsDatabase.SaveChangesAsync();
     }
 
-    public async Task SoftDeleteById(long identifier)
+    public async Task SoftDelete(long identifier)
     {
         var byId = await FindById(identifier);
         if (byId is null)
@@ -52,6 +52,12 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
     public Task<List<UserSetting>> GetAll()
     {
         return settingsDatabase.GetUserSettings().ToListAsync();
+    }
+
+    public Task<List<UserSetting>> GetAllNotDeleted()
+    {
+        return settingsDatabase.GetUserSettings()
+            .Where(x => x.DeletedDate == new DateTimeOffset?()).ToListAsync();
     }
 
     public Task<List<UserSetting>> GetUserSettings(long userId, bool asNoTracking = false)
@@ -88,10 +94,9 @@ public class UserSettingRepository(ISettingsDatabase settingsDatabase) : IUserSe
         return (T?)Convert.ChangeType(settingValue, typeof(T));
     }
 
-    
+
     public async Task SetUserSetting<T>(long userId, string type, string key, T value)
     {
-        
         var userSetting = await GetUserSetting(userId, type, key);
         if (userSetting is null)
         {

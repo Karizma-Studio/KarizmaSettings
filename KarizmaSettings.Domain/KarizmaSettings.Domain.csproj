@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="KarizmaCore" Version="1.0.0" />
+      <PackageReference Include="KarizmaCore" Version="1.0.5" />
     </ItemGroup>
 
 </Project>
